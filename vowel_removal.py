@@ -42,13 +42,16 @@ class Solution:
         S = S.replace("u", "")
         return S
     
-    # Easier solution, using an object to hold the vowels and then checking if the string contains the vowels object
+    # Easier solution, 
     def removeVowels2(self, S: str) -> str:
-        vowel_set = set('aeiou')
-        space = ""
-        for character in S:
-            if character not in vowel_set:
-                space += character
-            return character
+        '''
+        Using an object to hold  and then checking if the string contains the vowels object
+        '''
+        vowel_set = set('aeiou') # Created a new set to hold the vowels
+        string = "" # This will be used to hold the string without the vowels
+        for character in S: # Created index named character to use in for loop
+            if character not in vowel_set: # Checks if each string character is not in the vowel set
+                string += character  # If not found, add this character to the string
+            return string # returns the string
     
 
