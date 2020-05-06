@@ -28,15 +28,15 @@
 # Easier Solution: Using a dicitonary to record index
 class Solution:
     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-        indices = {}
-        for index, num in enumerate(sorted(nums)):
-            indices.setdefault(num, index)
+        indices = {} # Created an empty dictionary
+        for index, num in enumerate(sorted(nums)): # Creates a counter for nums and returns it as an object
+            indices.setdefault(num, index) # setdefault sets the key as the index number from the dictionary object
         return [indices[num] for num in nums]
 
     def smallerNumbersThanCurrent2(self, nums: List[int]) -> List[int]:
-        count = [0] * 102
-        for num in nums:
-            count[num + 1] += 1
-        for i in range(1, 102):
-            count[i] += count[i - 1]
-        return [count[num] for num in nums]
+        result = [] # creates an empty array
+        temp_numbers = nums.copy() # creates a new copied set of the nums
+        temp_numbers.sort() # Sorts the copied object set
+        for i in temp_numbers: # for loop to sort through 
+            result.append(temp_numbers.index(i))
+        return result
