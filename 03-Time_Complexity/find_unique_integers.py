@@ -23,5 +23,5 @@ class Solution:
         for _ in range(n):
             result.append(num)
             num += 2
-        return result
+        return result  
 
